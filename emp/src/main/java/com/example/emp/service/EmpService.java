@@ -28,7 +28,7 @@ public EmpBean saveEmp(EmpBean bean) {
 }
 
 public EmpBean getById(long id) {
-  return empRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Department not found"));
+  return empRepository.findById(id).get();//.orElseThrow(() -> new ResourceNotFoundException("Department not found"));
 }
 public void deleteById(long id) {
   empRepository.deleteById(id);

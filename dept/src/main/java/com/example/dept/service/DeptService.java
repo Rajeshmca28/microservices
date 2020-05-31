@@ -30,7 +30,7 @@ public DeptBean saveDept(DeptBean bean) {
 }
 
 public DeptBean getById(long id) {
-  return deptRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Department not found"));
+  return deptRepository.findById(id).get();//.orElseThrow(() -> new ResourceNotFoundException("Department not found"));
 }
 public void deleteById(long id) {
  deptRepository.deleteById(id);
